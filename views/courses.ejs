@@ -2,12 +2,19 @@
   <h3 class="text-center">Courses</h3>
   <div class="container">
     <div class="row">
-      <ul ng-init="Courses()">
+      <ul>
         <li ng-repeat="course in db.courses track by $index">
-          <p><span class="col-xs-2">COURSE_ID:</span> <input class="col-xs-10" type='text' ng-model='course.COURSE_ID' disabled></p>
-          <p><span class="col-xs-2">CLUB_ID:</span> <input class="col-xs-10" type='text' ng-model='course.CLUB_ID' disabled></p>
-          <p><span class="col-xs-2">COURSESEQ:</span> <input class="col-xs-10" type='text' ng-model='course.COURSESEQ' disabled></p>
-          <p><span class="col-xs-2">Name:</span> <input class="col-xs-10" type='text' ng-model='course.NAME' disabled></p>
+          <p ng-show="!db.edit.courses.index[$index]"><span class="col-xs-2">COURSE_ID:</span> <input class="col-xs-10" type='text' ng-model='course.COURSE_ID' disabled></p>
+          <p ng-show="!db.edit.courses.index[$index]"><span class="col-xs-2">CLUB_ID:</span> <input class="col-xs-10" type='text' ng-model='course.CLUB_ID' disabled></p>
+          <p ng-show="!db.edit.courses.index[$index]"><span class="col-xs-2">COURSESEQ:</span> <input class="col-xs-10" type='text' ng-model='course.COURSESEQ' disabled></p>
+          <p ng-show="!db.edit.courses.index[$index]"><span class="col-xs-2">Name:</span> <input class="col-xs-10" type='text' ng-model='course.NAME' disabled></p>
+          <p ng-show="db.edit.courses.index[$index]"><span class="col-xs-2">COURSE_ID:</span> <input class="col-xs-10" type='text' ng-model='course.COURSE_ID'></p>
+          <p ng-show="db.edit.courses.index[$index]"><span class="col-xs-2">CLUB_ID:</span> <input class="col-xs-10" type='text' ng-model='course.CLUB_ID'></p>
+          <p ng-show="db.edit.courses.index[$index]"><span class="col-xs-2">COURSESEQ:</span> <input class="col-xs-10" type='text' ng-model='course.COURSESEQ'></p>
+          <p ng-show="db.edit.courses.index[$index]"><span class="col-xs-2">Name:</span> <input class="col-xs-10" type='text' ng-model='course.NAME'></p>
+          <button class="btn btn-default" ng-click="courseEdit($index, false)" ng-show="!db.edit.courses.index[$index]">Edit</button>
+          <button class="btn btn-success col-xs-2" ng-click="courseEdit($index, true)" ng-show="db.edit.courses.index[$index]">Save Changes</button>
+          <button class="btn btn-danger col-xs-2" ng-click="courseEdit($index, false)" ng-show="db.edit.courses.index[$index]">Cancel</button>
         <li>
       </ul>
     </div>

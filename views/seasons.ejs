@@ -2,10 +2,15 @@
   <h3 class="text-center">Seasons</h3>
   <div class="container">
     <div class="row">
-      <ul ng-init="Seasons()">
+      <ul>
         <li ng-repeat="season in db.seasons track by $index">
-          <p><span class="col-xs-2">SEASON_ID:</span> <input class="col-xs-10" type='text' ng-model='season.SEASON_ID' disabled></p>
-          <p><span class="col-xs-2">STARTDATE:</span> <input class="col-xs-10" type='text' ng-model='season.STARTDATE' disabled></p>
+          <p ng-show="!db.edit.seasons.index[$index]"><span class="col-xs-2">SEASON_ID:</span> <input class="col-xs-10" type='text' ng-model='season.SEASON_ID' disabled></p>
+          <p ng-show="!db.edit.seasons.index[$index]"><span class="col-xs-2">STARTDATE:</span> <input class="col-xs-10" type='text' ng-model='season.STARTDATE' disabled></p>
+          <p ng-show="db.edit.seasons.index[$index]"><span class="col-xs-2">SEASON_ID:</span> <input class="col-xs-10" type='text' ng-model='season.SEASON_ID'></p>
+          <p ng-show="db.edit.seasons.index[$index]"><span class="col-xs-2">STARTDATE:</span> <input class="col-xs-10" type='text' ng-model='season.STARTDATE'></p>
+          <button class="btn btn-default" ng-click="seasonEdit($index, false)" ng-show="!db.edit.seasons.index[$index]">Edit</button>
+          <button class="btn btn-success col-xs-2" ng-click="seasonEdit($index, true)" ng-show="db.edit.seasons.index[$index]">Save Changes</button>
+          <button class="btn btn-danger col-xs-2" ng-click="seasonEdit($index, false)" ng-show="db.edit.seasons.index[$index]">Cancel</button>
         <li>
       </ul>
     </div>

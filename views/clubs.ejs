@@ -2,19 +2,33 @@
   <h3 class="text-center">Clubs</h3>
   <div class="container">
     <div class="row">
-      <ul ng-init="Clubs()">
+      <ul>
         <li ng-repeat="club in db.clubs track by $index">
-          <p><span class="col-xs-2">CLUB_ID:</span> <input class="col-xs-10" type='text' ng-model='club.CLUB_ID' disabled></p>
-          <p><span class="col-xs-2">Name:</span> <input class="col-xs-10" type='text' ng-model='club.NAME' disabled></p>
-          <p><span class="col-xs-2">Country:</span> <input class="col-xs-10" type='text' ng-model='club.COUNTRY' disabled></p>
-          <p><span class="col-xs-2">State:</span> <input class="col-xs-10" type='text' ng-model='club.STATE' disabled></p>
-          <p><span class="col-xs-2">City:</span> <input class="col-xs-10" type='text' ng-model='club.CITY' disabled></p>
-          <p><span class="col-xs-2">Zip:</span> <input class="col-xs-10" type='text' ng-model='club.ZIP' disabled></p>
-          <p><span class="col-xs-2">Street:</span> <input class="col-xs-10" type='text' ng-model='club.STREET' disabled></p>
-          <p><span class="col-xs-2">Email:</span> <input class="col-xs-10" type='text' ng-model='club.EMAIL' disabled></p>
-          <p><span class="col-xs-2">Phone:</span> <input class="col-xs-10" type='text' ng-model='club.PHONE' disabled></p>
-          <p><span class="col-xs-2">Slope:</span> <input class="col-xs-10" type='text' ng-model='club.SLOPE' disabled></p>
-          <p><span class="col-xs-2">Rules:</span> <textarea class="col-xs-10" type='text' rows="10" ng-model='club.RULES' disabled></textarea></p>
+          <p ng-show="!db.edit.clubs.index[$index]"><span class="col-xs-2">CLUB_ID:</span> <input class="col-xs-10" type='text' ng-model='club.CLUB_ID' disabled></p>
+          <p ng-show="!db.edit.clubs.index[$index]"><span class="col-xs-2">Name:</span> <input class="col-xs-10" type='text' ng-model='club.NAME' disabled></p>
+          <p ng-show="!db.edit.clubs.index[$index]"><span class="col-xs-2">Country:</span> <input class="col-xs-10" type='text' ng-model='club.COUNTRY' disabled></p>
+          <p ng-show="!db.edit.clubs.index[$index]"><span class="col-xs-2">State:</span> <input class="col-xs-10" type='text' ng-model='club.STATE' disabled></p>
+          <p ng-show="!db.edit.clubs.index[$index]"><span class="col-xs-2">City:</span> <input class="col-xs-10" type='text' ng-model='club.CITY' disabled></p>
+          <p ng-show="!db.edit.clubs.index[$index]"><span class="col-xs-2">Zip:</span> <input class="col-xs-10" type='text' ng-model='club.ZIP' disabled></p>
+          <p ng-show="!db.edit.clubs.index[$index]"><span class="col-xs-2">Street:</span> <input class="col-xs-10" type='text' ng-model='club.STREET' disabled></p>
+          <p ng-show="!db.edit.clubs.index[$index]"><span class="col-xs-2">Email:</span> <input class="col-xs-10" type='text' ng-model='club.EMAIL' disabled></p>
+          <p ng-show="!db.edit.clubs.index[$index]"><span class="col-xs-2">Phone:</span> <input class="col-xs-10" type='text' ng-model='club.PHONE' disabled></p>
+          <p ng-show="!db.edit.clubs.index[$index]"><span class="col-xs-2">Slope:</span> <input class="col-xs-10" type='text' ng-model='club.SLOPE' disabled></p>
+          <p ng-show="!db.edit.clubs.index[$index]"><span class="col-xs-2">Rules:</span> <textarea class="col-xs-10" type='text' rows="10" ng-model='club.RULES' disabled></textarea></p>
+          <p ng-show="db.edit.clubs.index[$index]"><span class="col-xs-2">CLUB_ID:</span> <input class="col-xs-10" type='text' ng-model='club.CLUB_ID'></p>
+          <p ng-show="db.edit.clubs.index[$index]"><span class="col-xs-2">Name:</span> <input class="col-xs-10" type='text' ng-model='club.NAME'></p>
+          <p ng-show="db.edit.clubs.index[$index]"><span class="col-xs-2">Country:</span> <input class="col-xs-10" type='text' ng-model='club.COUNTRY'></p>
+          <p ng-show="db.edit.clubs.index[$index]"><span class="col-xs-2">State:</span> <input class="col-xs-10" type='text' ng-model='club.STATE'></p>
+          <p ng-show="db.edit.clubs.index[$index]"><span class="col-xs-2">City:</span> <input class="col-xs-10" type='text' ng-model='club.CITY'></p>
+          <p ng-show="db.edit.clubs.index[$index]"><span class="col-xs-2">Zip:</span> <input class="col-xs-10" type='text' ng-model='club.ZIP'></p>
+          <p ng-show="db.edit.clubs.index[$index]"><span class="col-xs-2">Street:</span> <input class="col-xs-10" type='text' ng-model='club.STREET'></p>
+          <p ng-show="db.edit.clubs.index[$index]"><span class="col-xs-2">Email:</span> <input class="col-xs-10" type='text' ng-model='club.EMAIL'></p>
+          <p ng-show="db.edit.clubs.index[$index]"><span class="col-xs-2">Phone:</span> <input class="col-xs-10" type='text' ng-model='club.PHONE'></p>
+          <p ng-show="db.edit.clubs.index[$index]"><span class="col-xs-2">Slope:</span> <input class="col-xs-10" type='text' ng-model='club.SLOPE'></p>
+          <p ng-show="db.edit.clubs.index[$index]"><span class="col-xs-2">Rules:</span> <textarea class="col-xs-10" type='text' rows="10" ng-model='club.RULES'></textarea></p>
+          <button class="btn btn-default" ng-click="clubEdit($index, false)" ng-show="!db.edit.clubs.index[$index]">Edit</button>
+          <button class="btn btn-success col-xs-2" ng-click="clubEdit($index, true)" ng-show="db.edit.clubs.index[$index]">Save Changes</button>
+          <button class="btn btn-danger col-xs-2" ng-click="clubEdit($index, false)" ng-show="db.edit.clubs.index[$index]">Cancel</button>
         <li>
       </ul>
     </div>

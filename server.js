@@ -1,7 +1,7 @@
 /**
 * Michael Cebrian
 * 12/07/2014
-* final.js
+* server.js
 **/
 
 //Modules and base variables
@@ -104,6 +104,44 @@ app.get('/api/clubs', function(req, res) {
     connection.execute("select CLUB_ID, NAME, COUNTRY, STATE, CITY, ZIP, STREET, EMAIL, PHONE, SLOPE, RULES from CLUBS", [], function(err, results) {
       if (err) {
         console.log("Error selecting players:", err);
+        res.send({});
+      } else {
+        res.send(results);
+      }
+      connection.close();
+    });
+  });
+});
+
+app.post('/api/clubs', function(req, res) {
+  oracle.connect(connectData, function(err, connection) {
+    if (err) {
+      console.log("Error connecting to db: ", err);
+      return;
+    }
+
+    connection.execute("insert into CLUBS (CLUB_ID, NAME, COUNTRY, STATE, CITY, ZIP, STREET, EMAIL, PHONE, SLOPE, RULES) values (:1, :2, :3, :4, :5, :6, :7, :8, :9, :10)", [req.body.PLAYER_ID, req.body.NAME, req.body.COUNTRY, req.body.STATE, req.body.CITY, req.body.ZIP, req.body.STREET, req.body.EMAIL, req.body.PHONE, req.body.SLOPE, req.body.RULES], function(err, results) {
+      if (err) {
+        console.log("Error inserting club:", err);
+        res.send({});
+      } else {
+        res.send(results);
+      }
+      connection.close();
+    });
+  });
+});
+
+app.post('/api/club/:club_id', function(req, res) {
+  oracle.connect(connectData, function(err, connection) {
+    if (err) {
+      console.log("Error connecting to db: ", err);
+      return;
+    }
+
+    connection.execute("update CLUBS set CLUB_ID = :1, NAME = :2, COUNTRY = :3, STATE = :4, CITY = :5, ZIP = :6, STREET = :7, EMAIL = :8, PHONE = :9, SLOPE = :10, RULES = :11 where CLUB_ID = :12", [req.body.CLUB_ID, req.body.NAME, req.body.COUNTRY, req.body.STATE, req.body.CITY, req.body.ZIP, req.body.STREET, req.body.EMAIL, req.body.PHONE, req.body.SLOPE, req.body.RULES, req.params.club_id], function(err, results) {
+      if (err) {
+        console.log("Error updating Club:", err);
         res.send({});
       } else {
         res.send(results);

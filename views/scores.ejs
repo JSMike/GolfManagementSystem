@@ -2,12 +2,19 @@
   <h3 class="text-center">Scores</h3>
   <div class="container">
     <div class="row">
-      <ul ng-init="Scores()">
+      <ul>
         <li ng-repeat="score in db.scores track by $index">
-          <p><span class="col-xs-2">SCORE_ID:</span> <input class="col-xs-10" type='text' ng-model='score.SCORE_ID' disabled></p>
-          <p><span class="col-xs-2">HOLE_ID:</span> <input class="col-xs-10" type='text' ng-model='score.HOLE_ID' disabled></p>
-          <p><span class="col-xs-2">ROUND_ID:</span> <input class="col-xs-10" type='text' ng-model='score.ROUND_ID' disabled></p>
-          <p><span class="col-xs-2">SCORE:</span> <input class="col-xs-10" type='text' ng-model='score.SCORE' disabled></p>
+          <p ng-show="!db.edit.scores.index[$index]"><span class="col-xs-2">SCORE_ID:</span> <input class="col-xs-10" type='text' ng-model='score.SCORE_ID' disabled></p>
+          <p ng-show="!db.edit.scores.index[$index]"><span class="col-xs-2">HOLE_ID:</span> <input class="col-xs-10" type='text' ng-model='score.HOLE_ID' disabled></p>
+          <p ng-show="!db.edit.scores.index[$index]"><span class="col-xs-2">ROUND_ID:</span> <input class="col-xs-10" type='text' ng-model='score.ROUND_ID' disabled></p>
+          <p ng-show="!db.edit.scores.index[$index]"><span class="col-xs-2">SCORE:</span> <input class="col-xs-10" type='text' ng-model='score.SCORE' disabled></p>
+          <p ng-show="db.edit.scores.index[$index]"><span class="col-xs-2">SCORE_ID:</span> <input class="col-xs-10" type='text' ng-model='score.SCORE_ID'></p>
+          <p ng-show="db.edit.scores.index[$index]"><span class="col-xs-2">HOLE_ID:</span> <input class="col-xs-10" type='text' ng-model='score.HOLE_ID'></p>
+          <p ng-show="db.edit.scores.index[$index]"><span class="col-xs-2">ROUND_ID:</span> <input class="col-xs-10" type='text' ng-model='score.ROUND_ID'></p>
+          <p ng-show="db.edit.scores.index[$index]"><span class="col-xs-2">SCORE:</span> <input class="col-xs-10" type='text' ng-model='score.SCORE'></p>
+          <button class="btn btn-default col-xs-2" ng-click="scoreEdit($index, false)" ng-show="!db.edit.scores.index[$index]">Edit</button>
+          <button class="btn btn-success col-xs-2" ng-click="scoreEdit($index, true)" ng-show="db.edit.scores.index[$index]">Save Changes</button>
+          <button class="btn btn-danger col-xs-2" ng-click="scoreEdit($index, false)" ng-show="db.edit.scores.index[$index]">Cancel</button>
         <li>
       </ul>
     </div>

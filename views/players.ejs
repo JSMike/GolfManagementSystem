@@ -2,18 +2,31 @@
   <h3 class="text-center">Players</h3>
   <div class="container">
     <div class="row">
-      <ul ng-init="Players()">
+      <ul>
         <li ng-repeat="player in db.players track by $index">
-          <p><span class="col-xs-2">PLAYER_ID:</span> <input class="col-xs-10" type='text' ng-model='player.PLAYER_ID' disabled></p>
-          <p><span class="col-xs-2">Name:</span> <input class="col-xs-10" type='text' ng-model='player.Name' disabled></p>
-          <p><span class="col-xs-2">Country:</span> <input class="col-xs-10" type='text' ng-model='player.COUNTRY' disabled></p>
-          <p><span class="col-xs-2">State:</span> <input class="col-xs-10" type='text' ng-model='player.STATE' disabled></p>
-          <p><span class="col-xs-2">City:</span> <input class="col-xs-10" type='text' ng-model='player.CITY' disabled></p>
-          <p><span class="col-xs-2">Zip:</span> <input class="col-xs-10" type='text' ng-model='player.ZIP' disabled></p>
-          <p><span class="col-xs-2">Street:</span> <input class="col-xs-10" type='text' ng-model='player.STREET' disabled></p>
-          <p><span class="col-xs-2">Email:</span> <input class="col-xs-10" type='text' ng-model='player.EMAIL' disabled></p>
-          <p><span class="col-xs-2">Phone:</span> <input class="col-xs-10" type='text' ng-model='player.PHONE' disabled></p>
-          <p><span class="col-xs-2">INITIALHANDICAP:</span> <input class="col-xs-10" type='text' ng-model='player.INITIALHANDICAP' disabled></p>
+          <p ng-show="!db.edit.players.index[$index]"><span class="col-xs-2">PLAYER_ID:</span> <input class="col-xs-10" type='text' ng-model='player.PLAYER_ID' disabled></p>
+          <p ng-show="!db.edit.players.index[$index]"><span class="col-xs-2">Name:</span> <input class="col-xs-10" type='text' ng-model='player.Name' disabled></p>
+          <p ng-show="!db.edit.players.index[$index]"><span class="col-xs-2">Country:</span> <input class="col-xs-10" type='text' ng-model='player.COUNTRY' disabled></p>
+          <p ng-show="!db.edit.players.index[$index]"><span class="col-xs-2">State:</span> <input class="col-xs-10" type='text' ng-model='player.STATE' disabled></p>
+          <p ng-show="!db.edit.players.index[$index]"><span class="col-xs-2">City:</span> <input class="col-xs-10" type='text' ng-model='player.CITY' disabled></p>
+          <p ng-show="!db.edit.players.index[$index]"><span class="col-xs-2">Zip:</span> <input class="col-xs-10" type='text' ng-model='player.ZIP' disabled></p>
+          <p ng-show="!db.edit.players.index[$index]"><span class="col-xs-2">Street:</span> <input class="col-xs-10" type='text' ng-model='player.STREET' disabled></p>
+          <p ng-show="!db.edit.players.index[$index]"><span class="col-xs-2">Email:</span> <input class="col-xs-10" type='text' ng-model='player.EMAIL' disabled></p>
+          <p ng-show="!db.edit.players.index[$index]"><span class="col-xs-2">Phone:</span> <input class="col-xs-10" type='text' ng-model='player.PHONE' disabled></p>
+          <p ng-show="!db.edit.players.index[$index]"><span class="col-xs-2">INITIALHANDICAP:</span> <input class="col-xs-10" type='text' ng-model='player.INITIALHANDICAP' disabled></p>
+          <p ng-show="db.edit.players.index[$index]"><span class="col-xs-2">PLAYER_ID:</span> <input class="col-xs-10" type='text' ng-model='player.PLAYER_ID'></p>
+          <p ng-show="db.edit.players.index[$index]"><span class="col-xs-2">Name:</span> <input class="col-xs-10" type='text' ng-model='player.Name'></p>
+          <p ng-show="db.edit.players.index[$index]"><span class="col-xs-2">Country:</span> <input class="col-xs-10" type='text' ng-model='player.COUNTRY'></p>
+          <p ng-show="db.edit.players.index[$index]"><span class="col-xs-2">State:</span> <input class="col-xs-10" type='text' ng-model='player.STATE'></p>
+          <p ng-show="db.edit.players.index[$index]"><span class="col-xs-2">City:</span> <input class="col-xs-10" type='text' ng-model='player.CITY'></p>
+          <p ng-show="db.edit.players.index[$index]"><span class="col-xs-2">Zip:</span> <input class="col-xs-10" type='text' ng-model='player.ZIP'></p>
+          <p ng-show="db.edit.players.index[$index]"><span class="col-xs-2">Street:</span> <input class="col-xs-10" type='text' ng-model='player.STREET'></p>
+          <p ng-show="db.edit.players.index[$index]"><span class="col-xs-2">Email:</span> <input class="col-xs-10" type='text' ng-model='player.EMAIL'></p>
+          <p ng-show="db.edit.players.index[$index]"><span class="col-xs-2">Phone:</span> <input class="col-xs-10" type='text' ng-model='player.PHONE'></p>
+          <p ng-show="db.edit.players.index[$index]"><span class="col-xs-2">INITIALHANDICAP:</span> <input class="col-xs-10" type='text' ng-model='player.INITIALHANDICAP'></p>
+          <button class="btn btn-default" ng-click="playerEdit($index, false)" ng-show="!db.edit.players.index[$index]">Edit</button>
+          <button class="btn btn-success col-xs-2" ng-click="playerEdit($index, true)" ng-show="db.edit.players.index[$index]">Save Changes</button>
+          <button class="btn btn-danger col-xs-2" ng-click="playerEdit($index, false)" ng-show="db.edit.players.index[$index]">Cancel</button>
         <li>
       </ul>
     </div>

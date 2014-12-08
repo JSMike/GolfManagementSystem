@@ -2,11 +2,17 @@
   <h3 class="text-center">Teams</h3>
   <div class="container">
     <div class="row">
-      <ul ng-init="Teams()">
+      <ul>
         <li ng-repeat="team in db.teams track by $index">
-          <p><span class="col-xs-2">TEAM_ID:</span> <input class="col-xs-10" type='text' ng-model='team.TEAM_ID' disabled></p>
-          <p><span class="col-xs-2">PLAYER1:</span> <input class="col-xs-10" type='text' ng-model='team.PLAYER1' disabled></p>
-          <p><span class="col-xs-2">PLAYER2:</span> <input class="col-xs-10" type='text' ng-model='team.PLAYER2' disabled></p>
+          <p ng-show="!db.edit.teams.index[$index]"><span class="col-xs-2">TEAM_ID:</span> <input class="col-xs-10" type='text' ng-model='team.TEAM_ID' disabled></p>
+          <p ng-show="!db.edit.teams.index[$index]"><span class="col-xs-2">PLAYER1:</span> <input class="col-xs-10" type='text' ng-model='team.PLAYER1' disabled></p>
+          <p ng-show="!db.edit.teams.index[$index]"><span class="col-xs-2">PLAYER2:</span> <input class="col-xs-10" type='text' ng-model='team.PLAYER2' disabled></p>
+          <p ng-show="db.edit.teams.index[$index]"><span class="col-xs-2">TEAM_ID:</span> <input class="col-xs-10" type='text' ng-model='team.TEAM_ID'></p>
+          <p ng-show="db.edit.teams.index[$index]"><span class="col-xs-2">PLAYER1:</span> <input class="col-xs-10" type='text' ng-model='team.PLAYER1'></p>
+          <p ng-show="db.edit.teams.index[$index]"><span class="col-xs-2">PLAYER2:</span> <input class="col-xs-10" type='text' ng-model='team.PLAYER2'></p>
+          <button class="btn btn-default" ng-click="teamEdit($index, false)" ng-show="!db.edit.teams.index[$index]">Edit</button>
+          <button class="btn btn-success col-xs-2" ng-click="teamEdit($index, true)" ng-show="db.edit.teams.index[$index]">Save Changes</button>
+          <button class="btn btn-danger col-xs-2" ng-click="teamEdit($index, false)" ng-show="db.edit.teams.index[$index]">Cancel</button>
         <li>
       </ul>
     </div>

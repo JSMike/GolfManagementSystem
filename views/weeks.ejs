@@ -2,12 +2,19 @@
   <h3 class="text-center">Weeks</h3>
   <div class="container">
     <div class="row">
-      <ul ng-init="Weeks()">
+      <ul>
         <li ng-repeat="week in db.weeks track by $index">
-          <p><span class="col-xs-2">WEEK_ID:</span> <input class="col-xs-10" type='text' ng-model='week.WEEK_ID' disabled></p>
-          <p><span class="col-xs-2">SEASON_ID:</span> <input class="col-xs-10" type='text' ng-model='week.SEASON_ID' disabled></p>
-          <p><span class="col-xs-2">COURSE_ID:</span> <input class="col-xs-10" type='text' ng-model='week.COURSE_ID' disabled></p>
-          <p><span class="col-xs-2">WEEKNUM:</span> <input class="col-xs-10" type='text' ng-model='week.WEEKNUM' disabled></p>
+          <p ng-show="!db.edit.weeks.index[$index]"><span class="col-xs-2">WEEK_ID:</span> <input class="col-xs-10" type='text' ng-model='week.WEEK_ID' disabled></p>
+          <p ng-show="!db.edit.weeks.index[$index]"><span class="col-xs-2">SEASON_ID:</span> <input class="col-xs-10" type='text' ng-model='week.SEASON_ID' disabled></p>
+          <p ng-show="!db.edit.weeks.index[$index]"><span class="col-xs-2">COURSE_ID:</span> <input class="col-xs-10" type='text' ng-model='week.COURSE_ID' disabled></p>
+          <p ng-show="!db.edit.weeks.index[$index]"><span class="col-xs-2">WEEKNUM:</span> <input class="col-xs-10" type='text' ng-model='week.WEEKNUM' disabled></p>
+          <p ng-show="db.edit.weeks.index[$index]"><span class="col-xs-2">WEEK_ID:</span> <input class="col-xs-10" type='text' ng-model='week.WEEK_ID'></p>
+          <p ng-show="db.edit.weeks.index[$index]"><span class="col-xs-2">SEASON_ID:</span> <input class="col-xs-10" type='text' ng-model='week.SEASON_ID'></p>
+          <p ng-show="db.edit.weeks.index[$index]"><span class="col-xs-2">COURSE_ID:</span> <input class="col-xs-10" type='text' ng-model='week.COURSE_ID'></p>
+          <p ng-show="db.edit.weeks.index[$index]"><span class="col-xs-2">WEEKNUM:</span> <input class="col-xs-10" type='text' ng-model='week.WEEKNUM'></p>
+          <button class="btn btn-default" ng-click="weekEdit($index, false)" ng-show="!db.edit.weeks.index[$index]">Edit</button>
+          <button class="btn btn-success col-xs-2" ng-click="weekEdit($index, true)" ng-show="db.edit.weeks.index[$index]">Save Changes</button>
+          <button class="btn btn-danger col-xs-2" ng-click="weekEdit($index, false)" ng-show="db.edit.weeks.index[$index]">Cancel</button>
         <li>
       </ul>
     </div>

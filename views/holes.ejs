@@ -2,14 +2,23 @@
   <h3 class="text-center">Holes</h3>
   <div class="container">
     <div class="row">
-      <ul ng-init="Holes()">
+      <ul>
         <li ng-repeat="hole in db.holes track by $index">
-          <p><span class="col-xs-2">HOLE_ID:</span> <input class="col-xs-10" type='text' ng-model='hole.HOLE_ID' disabled></p>
-          <p><span class="col-xs-2">COURSE_ID:</span> <input class="col-xs-10" type='text' ng-model='hole.COURSE_ID' disabled></p>
-          <p><span class="col-xs-2">HOLENUM:</span> <input class="col-xs-10" type='text' ng-model='hole.HOLENUM' disabled></p>
-          <p><span class="col-xs-2">PAR:</span> <input class="col-xs-10" type='text' ng-model='hole.PAR' disabled></p>
-          <p><span class="col-xs-2">YARDS:</span> <input class="col-xs-10" type='text' ng-model='hole.YARDS' disabled></p>
-          <p><span class="col-xs-2">HANDICAP:</span> <input class="col-xs-10" type='text' ng-model='hole.HANDICAP' disabled></p>
+          <p ng-show="!db.edit.holes.index[$index]"><span class="col-xs-2">HOLE_ID:</span> <input class="col-xs-10" type='text' ng-model='hole.HOLE_ID' disabled></p>
+          <p ng-show="!db.edit.holes.index[$index]"><span class="col-xs-2">COURSE_ID:</span> <input class="col-xs-10" type='text' ng-model='hole.COURSE_ID' disabled></p>
+          <p ng-show="!db.edit.holes.index[$index]"><span class="col-xs-2">HOLENUM:</span> <input class="col-xs-10" type='text' ng-model='hole.HOLENUM' disabled></p>
+          <p ng-show="!db.edit.holes.index[$index]"><span class="col-xs-2">PAR:</span> <input class="col-xs-10" type='text' ng-model='hole.PAR' disabled></p>
+          <p ng-show="!db.edit.holes.index[$index]"><span class="col-xs-2">YARDS:</span> <input class="col-xs-10" type='text' ng-model='hole.YARDS' disabled></p>
+          <p ng-show="!db.edit.holes.index[$index]"><span class="col-xs-2">HANDICAP:</span> <input class="col-xs-10" type='text' ng-model='hole.HANDICAP' disabled></p>
+          <p ng-show="db.edit.holes.index[$index]"><span class="col-xs-2">HOLE_ID:</span> <input class="col-xs-10" type='text' ng-model='hole.HOLE_ID'></p>
+          <p ng-show="db.edit.holes.index[$index]"><span class="col-xs-2">COURSE_ID:</span> <input class="col-xs-10" type='text' ng-model='hole.COURSE_ID'></p>
+          <p ng-show="db.edit.holes.index[$index]"><span class="col-xs-2">HOLENUM:</span> <input class="col-xs-10" type='text' ng-model='hole.HOLENUM'></p>
+          <p ng-show="db.edit.holes.index[$index]"><span class="col-xs-2">PAR:</span> <input class="col-xs-10" type='text' ng-model='hole.PAR'></p>
+          <p ng-show="db.edit.holes.index[$index]"><span class="col-xs-2">YARDS:</span> <input class="col-xs-10" type='text' ng-model='hole.YARDS'></p>
+          <p ng-show="db.edit.holes.index[$index]"><span class="col-xs-2">HANDICAP:</span> <input class="col-xs-10" type='text' ng-model='hole.HANDICAP'></p>
+          <button class="btn btn-default" ng-click="holeEdit($index, false)" ng-show="!db.edit.holes.index[$index]">Edit</button>
+          <button class="btn btn-success col-xs-2" ng-click="holeEdit($index, true)" ng-show="db.edit.holes.index[$index]">Save Changes</button>
+          <button class="btn btn-danger col-xs-2" ng-click="holeEdit($index, false)" ng-show="db.edit.holes.index[$index]">Cancel</button>
         <li>
       </ul>
     </div>
