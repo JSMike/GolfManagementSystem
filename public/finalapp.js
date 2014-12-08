@@ -111,16 +111,18 @@ finalApp.controller('finalController', function($scope, $http) {
   };
 
 
-  $scope.Clubs();
-  $scope.Courses();
-  $scope.Holes();
-  $scope.Matchups();
-  $scope.Players();
-  $scope.Rounds();
-  $scope.Scores();
-  $scope.Seasons();
-  $scope.Teams();
-  $scope.Weeks();
+  $scope.init = function () {
+    $scope.Clubs();
+    $scope.Courses();
+    $scope.Holes();
+    $scope.Matchups();
+    $scope.Players();
+    $scope.Rounds();
+    $scope.Scores();
+    $scope.Seasons();
+    $scope.Teams();
+    $scope.Weeks();
+  }
 });
 
 finalApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
