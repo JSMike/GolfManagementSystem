@@ -52,7 +52,7 @@ finalApp.controller('finalController', function($scope, $http) {
     if (!$scope.db.edit.clubs.index[$index]) {
       $scope.db.edit.clubs.index[$index] = $scope.db.clubs[$index];
     } else if (confirm) {
-      $http.post('/club/' + $scope.db.edit.clubs.index[$index].CLUB_ID, $scope.db.clubs[$index])
+      $http.post('/api/club/' + $scope.db.edit.clubs.index[$index].CLUB_ID, $scope.db.clubs[$index])
       .success(function(data) {
         delete $scope.db.edit.clubs.index[$index];
         $scope.Clubs();

@@ -14,7 +14,7 @@
           <p ng-show="db.edit.scores.index[$index]"><span class="col-xs-2">SCORE:</span> <input class="col-xs-10" type='text' ng-model='score.SCORE'></p>
           <button class="btn btn-default col-xs-2" ng-click="scoreEdit($index, false)" ng-show="!db.edit.scores.index[$index]">Edit</button>
           <button class="btn btn-success col-xs-2" ng-click="scoreEdit($index, true)" ng-show="db.edit.scores.index[$index]">Save Changes</button>
-          <button class="btn btn-danger col-xs-2" ng-click="scoreEdit($index, false)" ng-show="db.edit.scores.index[$index]">Cancel</button>
+          <button class="btn btn-danger col-xs-2" ng-click="scoreEdit($index, false)" ng-show="db.edit.scores.index[$index]">Cancel</button><br>
         <li>
       </ul>
     </div>

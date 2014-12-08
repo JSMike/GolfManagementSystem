@@ -12,7 +12,7 @@
           <p ng-show="db.edit.teams.index[$index]"><span class="col-xs-2">PLAYER2:</span> <input class="col-xs-10" type='text' ng-model='team.PLAYER2'></p>
           <button class="btn btn-default" ng-click="teamEdit($index, false)" ng-show="!db.edit.teams.index[$index]">Edit</button>
           <button class="btn btn-success col-xs-2" ng-click="teamEdit($index, true)" ng-show="db.edit.teams.index[$index]">Save Changes</button>
-          <button class="btn btn-danger col-xs-2" ng-click="teamEdit($index, false)" ng-show="db.edit.teams.index[$index]">Cancel</button>
+          <button class="btn btn-danger col-xs-2" ng-click="teamEdit($index, false)" ng-show="db.edit.teams.index[$index]">Cancel</button><br>
         <li>
       </ul>
     </div>

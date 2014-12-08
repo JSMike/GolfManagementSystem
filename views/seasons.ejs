@@ -10,7 +10,7 @@
           <p ng-show="db.edit.seasons.index[$index]"><span class="col-xs-2">STARTDATE:</span> <input class="col-xs-10" type='text' ng-model='season.STARTDATE'></p>
           <button class="btn btn-default" ng-click="seasonEdit($index, false)" ng-show="!db.edit.seasons.index[$index]">Edit</button>
           <button class="btn btn-success col-xs-2" ng-click="seasonEdit($index, true)" ng-show="db.edit.seasons.index[$index]">Save Changes</button>
-          <button class="btn btn-danger col-xs-2" ng-click="seasonEdit($index, false)" ng-show="db.edit.seasons.index[$index]">Cancel</button>
+          <button class="btn btn-danger col-xs-2" ng-click="seasonEdit($index, false)" ng-show="db.edit.seasons.index[$index]">Cancel</button><br>
         <li>
       </ul>
     </div>

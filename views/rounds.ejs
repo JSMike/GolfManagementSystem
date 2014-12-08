@@ -14,7 +14,7 @@
           <p ng-show="db.edit.rounds.index[$index]"><span class="col-xs-2">ROUNDDATE:</span> <input class="col-xs-10" type='text' ng-model='round.ROUNDDATE'></p>
           <button class="btn btn-default" ng-click="roundEdit($index, false)" ng-show="!db.edit.rounds.index[$index]">Edit</button>
           <button class="btn btn-success col-xs-2" ng-click="roundEdit($index, true)" ng-show="db.edit.rounds.index[$index]">Save Changes</button>
-          <button class="btn btn-danger col-xs-2" ng-click="roundEdit($index, false)" ng-show="db.edit.rounds.index[$index]">Cancel</button>
+          <button class="btn btn-danger col-xs-2" ng-click="roundEdit($index, false)" ng-show="db.edit.rounds.index[$index]">Cancel</button><br>
         <li>
       </ul>
     </div>
