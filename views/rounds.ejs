@@ -1,11 +1,15 @@
 <div>
   <h3 class="text-center">Rounds</h3>
-  <ul ng-init="Rounds()">
-    <li ng-repeat="round in db.rounds track by $index">
-      <p>ROUND_ID: <input type='text' ng-model='round.ROUND_ID' disabled></p>
-      <p>PLAYER_ID: <input type='text' ng-model='round.PLAYER_ID' disabled></p>
-      <p>COURSE_ID: <input type='text' ng-model='round.COURSE_ID' disabled></p>
-      <p>ROUNDDATE: <input type='text' ng-model='round.ROUNDDATE' disabled></p>
-    <li>
-  </ul>
+  <div class="container">
+    <div class="row">
+      <ul ng-init="Rounds()">
+        <li ng-repeat="round in db.rounds track by $index">
+          <p><span class="col-xs-2">ROUND_ID:</span> <input class="col-xs-10" type='text' ng-model='round.ROUND_ID' disabled></p>
+          <p><span class="col-xs-2">PLAYER_ID:</span> <input class="col-xs-10" type='text' ng-model='round.PLAYER_ID' disabled></p>
+          <p><span class="col-xs-2">COURSE_ID:</span> <input class="col-xs-10" type='text' ng-model='round.COURSE_ID' disabled></p>
+          <p><span class="col-xs-2">ROUNDDATE:</span> <input class="col-xs-10" type='text' ng-model='round.ROUNDDATE' disabled></p>
+        <li>
+      </ul>
+    </div>
+  </div>
 </div>

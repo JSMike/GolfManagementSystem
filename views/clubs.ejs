@@ -1,18 +1,22 @@
 <div>
   <h3 class="text-center">Clubs</h3>
-  <ul ng-init="Clubs()">
-    <li ng-repeat="club in db.clubs track by $index">
-      <p>CLUB_ID: <input type='text' ng-model='club.CLUB_ID' disabled></p>
-      <p>Name: <input type='text' ng-model='club.NAME' disabled></p>
-      <p>Country: <input type='text' ng-model='club.COUNTRY' disabled></p>
-      <p>State: <input type='text' ng-model='club.STATE' disabled></p>
-      <p>City: <input type='text' ng-model='club.CITY' disabled></p>
-      <p>Zip: <input type='text' ng-model='club.ZIP' disabled></p>
-      <p>Street: <input type='text' ng-model='club.STREET' disabled></p>
-      <p>Email: <input type='text' ng-model='club.EMAIL' disabled></p>
-      <p>Phone: <input type='text' ng-model='club.PHONE' disabled></p>
-      <p>Slope: <input type='text' ng-model='club.SLOPE' disabled></p>
-      <p>Rules: <input type='text' ng-model='club.RULES' disabled></p>
-    <li>
-  </ul>
+  <div class="container">
+    <div class="row">
+      <ul ng-init="Clubs()">
+        <li ng-repeat="club in db.clubs track by $index">
+          <p><span class="col-xs-2">CLUB_ID:</span> <input class="col-xs-10" type='text' ng-model='club.CLUB_ID' disabled></p>
+          <p><span class="col-xs-2">Name:</span> <input class="col-xs-10" type='text' ng-model='club.NAME' disabled></p>
+          <p><span class="col-xs-2">Country:</span> <input class="col-xs-10" type='text' ng-model='club.COUNTRY' disabled></p>
+          <p><span class="col-xs-2">State:</span> <input class="col-xs-10" type='text' ng-model='club.STATE' disabled></p>
+          <p><span class="col-xs-2">City:</span> <input class="col-xs-10" type='text' ng-model='club.CITY' disabled></p>
+          <p><span class="col-xs-2">Zip:</span> <input class="col-xs-10" type='text' ng-model='club.ZIP' disabled></p>
+          <p><span class="col-xs-2">Street:</span> <input class="col-xs-10" type='text' ng-model='club.STREET' disabled></p>
+          <p><span class="col-xs-2">Email:</span> <input class="col-xs-10" type='text' ng-model='club.EMAIL' disabled></p>
+          <p><span class="col-xs-2">Phone:</span> <input class="col-xs-10" type='text' ng-model='club.PHONE' disabled></p>
+          <p><span class="col-xs-2">Slope:</span> <input class="col-xs-10" type='text' ng-model='club.SLOPE' disabled></p>
+          <p><span class="col-xs-2">Rules:</span> <input class="col-xs-10" type='text' ng-model='club.RULES' disabled></p>
+        <li>
+      </ul>
+    </div>
+  </div>
 </div>

@@ -1,11 +1,15 @@
 <div>
   <h3 class="text-center">Scores</h3>
-  <ul ng-init="Scores()">
-    <li ng-repeat="score in db.scores track by $index">
-      <p>SCORE_ID: <input type='text' ng-model='score.SCORE_ID' disabled></p>
-      <p>HOLE_ID: <input type='text' ng-model='score.HOLE_ID' disabled></p>
-      <p>ROUND_ID: <input type='text' ng-model='score.ROUND_ID' disabled></p>
-      <p>SCORE: <input type='text' ng-model='score.SCORE' disabled></p>
-    <li>
-  </ul>
+  <div class="container">
+    <div class="row">
+      <ul ng-init="Scores()">
+        <li ng-repeat="score in db.scores track by $index">
+          <p><span class="col-xs-2">SCORE_ID:</span> <input class="col-xs-10" type='text' ng-model='score.SCORE_ID' disabled></p>
+          <p><span class="col-xs-2">HOLE_ID:</span> <input class="col-xs-10" type='text' ng-model='score.HOLE_ID' disabled></p>
+          <p><span class="col-xs-2">ROUND_ID:</span> <input class="col-xs-10" type='text' ng-model='score.ROUND_ID' disabled></p>
+          <p><span class="col-xs-2">SCORE:</span> <input class="col-xs-10" type='text' ng-model='score.SCORE' disabled></p>
+        <li>
+      </ul>
+    </div>
+  </div>
 </div>

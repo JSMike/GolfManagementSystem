@@ -1,15 +1,19 @@
 <div>
   <h3 class="text-center">Matchups</h3>
-  <ul ng-init"Matchups()">
-    <li ng-repeat="matchup in db.matchups track by $index">
-      <p>MATCHUP_ID: <input type='text' ng-model='matchup.MATCHUP_ID' disabled></p>
-      <p>WEEK_ID: <input type='text' ng-model='matchup.WEEK_ID' disabled></p>
-      <p>TEAM1: <input type='text' ng-model='matchup.TEAM1' disabled></p>
-      <p>TEAM2: <input type='text' ng-model='matchup.TEAM2' disabled></p>
-      <p>TEAM1P1ROUND: <input type='text' ng-model='matchup.TEAM1P1ROUND' disabled></p>
-      <p>TEAM1P2ROUND: <input type='text' ng-model='matchup.TEAM1P2ROUND' disabled></p>
-      <p>TEAM2P1ROUND: <input type='text' ng-model='matchup.TEAM2P1ROUND' disabled></p>
-      <p>TEAM2P2ROUND: <input type='text' ng-model='matchup.TEAM2P2ROUND' disabled></p>
-    <li>
-  </ul>
+  <div class="container">
+    <div class="row">
+      <ul ng-init"Matchups()">
+        <li ng-repeat="matchup in db.matchups track by $index">
+          <p><span class="col-xs-2">MATCHUP_ID:</span> <input class="col-xs-10" type='text' ng-model='matchup.MATCHUP_ID' disabled></p>
+          <p><span class="col-xs-2">WEEK_ID:</span> <input class="col-xs-10" type='text' ng-model='matchup.WEEK_ID' disabled></p>
+          <p><span class="col-xs-2">TEAM1:</span> <input class="col-xs-10" type='text' ng-model='matchup.TEAM1' disabled></p>
+          <p><span class="col-xs-2">TEAM2:</span> <input class="col-xs-10" type='text' ng-model='matchup.TEAM2' disabled></p>
+          <p><span class="col-xs-2">TEAM1P1ROUND:</span> <input class="col-xs-10" type='text' ng-model='matchup.TEAM1P1ROUND' disabled></p>
+          <p><span class="col-xs-2">TEAM1P2ROUND:</span> <input class="col-xs-10" type='text' ng-model='matchup.TEAM1P2ROUND' disabled></p>
+          <p><span class="col-xs-2">TEAM2P1ROUND:</span> <input class="col-xs-10" type='text' ng-model='matchup.TEAM2P1ROUND' disabled></p>
+          <p><span class="col-xs-2">TEAM2P2ROUND:</span> <input class="col-xs-10" type='text' ng-model='matchup.TEAM2P2ROUND' disabled></p>
+        <li>
+      </ul>
+    </div>
+  </div>
 </div>

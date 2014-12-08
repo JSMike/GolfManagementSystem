@@ -1,9 +1,13 @@
 <div>
   <h3 class="text-center">Seasons</h3>
-  <ul ng-init="Seasons()">
-    <li ng-repeat="season in db.seasons track by $index">
-      <p>SEASON_ID: <input type='text' ng-model='season.SEASON_ID' disabled></p>
-      <p>STARTDATE: <input type='text' ng-model='season.STARTDATE' disabled></p>
-    <li>
-  </ul>
+  <div class="container">
+    <div class="row">
+      <ul ng-init="Seasons()">
+        <li ng-repeat="season in db.seasons track by $index">
+          <p><span class="col-xs-2">SEASON_ID:</span> <input class="col-xs-10" type='text' ng-model='season.SEASON_ID' disabled></p>
+          <p><span class="col-xs-2">STARTDATE:</span> <input class="col-xs-10" type='text' ng-model='season.STARTDATE' disabled></p>
+        <li>
+      </ul>
+    </div>
+  </div>
 </div>

@@ -137,20 +137,20 @@ finalApp.controller('finalController', function($scope, $http) {
     });
   };
 
-  $scope.init = function () {
-    console.log("Calling functions.");
-    $scope.Clubs();
-    $scope.Courses();
-    $scope.Holes();
-    $scope.Matchups();
-    $scope.Players();
-    $scope.Rounds();
-    $scope.Scores();
-    $scope.Seasons();
-    $scope.Teams();
-    $scope.Weeks();
-
-  };
+  // $scope.init = function () {
+  //   console.log("Calling functions.");
+  //   $scope.Clubs();
+  //   $scope.Courses();
+  //   $scope.Holes();
+  //   $scope.Matchups();
+  //   $scope.Players();
+  //   $scope.Rounds();
+  //   $scope.Scores();
+  //   $scope.Seasons();
+  //   $scope.Teams();
+  //   $scope.Weeks();
+  //
+  // };
 
 });
 

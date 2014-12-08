@@ -1,17 +1,21 @@
 <div>
   <h3 class="text-center">Players</h3>
-  <ul ng-init="Players()">
-    <li ng-repeat="player in db.players track by $index">
-      <p>PLAYER_ID: <input type='text' ng-model='player.PLAYER_ID' disabled></p>
-      <p>Name: <input type='text' ng-model='player.Name' disabled></p>
-      <p>Country: <input type='text' ng-model='player.COUNTRY' disabled></p>
-      <p>State: <input type='text' ng-model='player.STATE' disabled></p>
-      <p>City: <input type='text' ng-model='player.CITY' disabled></p>
-      <p>Zip: <input type='text' ng-model='player.ZIP' disabled></p>
-      <p>Street: <input type='text' ng-model='player.STREET' disabled></p>
-      <p>Email: <input type='text' ng-model='player.EMAIL' disabled></p>
-      <p>Phone: <input type='text' ng-model='player.PHONE' disabled></p>
-      <p>INITIALHANDICAP: <input type='text' ng-model='player.INITIALHANDICAP' disabled></p>
-    <li>
-  </ul>
+  <div class="container">
+    <div class="row">
+      <ul ng-init="Players()">
+        <li ng-repeat="player in db.players track by $index">
+          <p><span class="col-xs-2">PLAYER_ID:</span> <input class="col-xs-10" type='text' ng-model='player.PLAYER_ID' disabled></p>
+          <p><span class="col-xs-2">Name:</span> <input class="col-xs-10" type='text' ng-model='player.Name' disabled></p>
+          <p><span class="col-xs-2">Country:</span> <input class="col-xs-10" type='text' ng-model='player.COUNTRY' disabled></p>
+          <p><span class="col-xs-2">State:</span> <input class="col-xs-10" type='text' ng-model='player.STATE' disabled></p>
+          <p><span class="col-xs-2">City:</span> <input class="col-xs-10" type='text' ng-model='player.CITY' disabled></p>
+          <p><span class="col-xs-2">Zip:</span> <input class="col-xs-10" type='text' ng-model='player.ZIP' disabled></p>
+          <p><span class="col-xs-2">Street:</span> <input class="col-xs-10" type='text' ng-model='player.STREET' disabled></p>
+          <p><span class="col-xs-2">Email:</span> <input class="col-xs-10" type='text' ng-model='player.EMAIL' disabled></p>
+          <p><span class="col-xs-2">Phone:</span> <input class="col-xs-10" type='text' ng-model='player.PHONE' disabled></p>
+          <p><span class="col-xs-2">INITIALHANDICAP:</span> <input class="col-xs-10" type='text' ng-model='player.INITIALHANDICAP' disabled></p>
+        <li>
+      </ul>
+    </div>
+  </div>
 </div>
