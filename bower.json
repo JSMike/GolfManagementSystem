@@ -1,5 +1,5 @@
 {
-  "name": "CSC8490 - Final Project",
+  "name": "CSC8490-Final Project",
   "version": "0.1.0",
   "description": "Shows examples of using Oracle SQL with Node.js",
   "main": "server.js",
