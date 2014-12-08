@@ -1,7 +1,6 @@
 var finalApp = angular.module('finalApp', ['ngRoute']);
 
 finalApp.controller('finalController', function($scope, $http) {
-  $scope.db = {};
   // Clubs
   $scope.Clubs = function() {
     $http.get('/api/clubs')
@@ -120,19 +119,19 @@ finalApp.controller('finalController', function($scope, $http) {
   };
 
 
-  $scope.init = function () {
-    console.log("init called.");
-    $scope.Clubs();
-    $scope.Courses();
-    $scope.Holes();
-    $scope.Matchups();
-    $scope.Players();
-    $scope.Rounds();
-    $scope.Scores();
-    $scope.Seasons();
-    $scope.Teams();
-    $scope.Weeks();
-  };
+  $scope.db = {};
+  console.log("Calling functions.");
+  $scope.Clubs();
+  $scope.Courses();
+  $scope.Holes();
+  $scope.Matchups();
+  $scope.Players();
+  $scope.Rounds();
+  $scope.Scores();
+  $scope.Seasons();
+  $scope.Teams();
+  $scope.Weeks();
+
 });
 
 finalApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
