@@ -1,6 +1,7 @@
 var finalApp = angular.module('finalApp', ['ngRoute']);
 
 finalApp.controller('finalController', function($scope, $http) {
+  $scope.test = "Test!";
   $scope.db = {};
   // Clubs
   $scope.Clubs = function() {
