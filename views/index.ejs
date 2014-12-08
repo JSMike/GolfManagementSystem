@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/index.css">
   <script type="text/javascript" src="/lib/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="/lib/angular/angular.min.js"></script>
@@ -18,7 +18,7 @@
   <script type="text/javascript" src="/lib/angular-dialog-service/dist/dialogs.min.js"></script>
   <script type="text/javascript" src="/finalApp.js"></script>
 </head>
-<body ng-controller='finalController' class="min-width">
+<body ng-controller='finalController' class="min-width" ng-init="init()">
   <navbar></navbar>
 
     <div ng-view></div>
