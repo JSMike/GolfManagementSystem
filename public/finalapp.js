@@ -40,7 +40,7 @@ finalApp.controller('finalController', function($scope, $http) {
     $http.get('/api/clubs')
     .success(function(data) {
       $scope.db.clubs = data;
-      //console.log('Clubs: ' + data);
+       //console.log('Clubs: ' + data);
     })
     .error(function(data) {
       console.log('Error: ' + data);
