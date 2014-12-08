@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- views/index.ejs -->
+<html lang="en" ng-app='finalApp'>
+<head>
+  <title>CSC8540 - iDeclare - War</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <script type="text/javascript" src="/lib/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/lib/angular/angular.min.js"></script>
+  <script type="text/javascript" src="/lib/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="/lib/angularjs-scroll-glue-Luegg/src/scrollglue.js"></script>
+  <script type="text/javascript" src="/lib/angular-sanitize/angular-sanitize.min.js"></script>
+  <script type="text/javascript" src="/lib/angular-ui/build/angular-ui.min.js"></script>
+  <script type="text/javascript" src="/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script type="text/javascript" src="/lib/angular-dialog-service/dist/dialogs.min.js"></script>
+</head>
+<body ng-controller='finalController' class="min-width">
+  <navbar></navbar>
+
+    <div ng-view></div>
+
+  </body>
+</html>
