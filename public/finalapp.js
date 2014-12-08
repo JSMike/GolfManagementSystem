@@ -131,6 +131,7 @@ finalApp.controller('finalController', function($scope, $http) {
     $scope.Seasons();
     $scope.Teams();
     $scope.Weeks();
+    return "";
   };
 
 });
