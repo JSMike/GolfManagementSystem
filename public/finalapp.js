@@ -1,7 +1,6 @@
 var finalApp = angular.module('finalApp', ['ngRoute']);
 
 finalApp.controller('finalController', function($scope, $http) {
-  $scope.test = "Test!";
   $scope.db = {};
   // Clubs
   $scope.Clubs = function() {
@@ -9,12 +8,12 @@ finalApp.controller('finalController', function($scope, $http) {
     .success(function(data) {
       $scope.db.clubs = data;
       console.log('Clubs: ' + data);
-      $scope.$apply();
+
     })
     .error(function(data) {
       console.log('Error: ' + data);
       $scope.db.clubs =  [];
-      $scope.$apply();
+
     });
   };
 
@@ -24,12 +23,12 @@ finalApp.controller('finalController', function($scope, $http) {
     .success(function(data) {
       $scope.db.courses =  data;
       console.log('Courses: ' + data);
-      $scope.$apply();
+
     })
     .error(function(data) {
       console.log('Error: ' + data);
       $scope.db.courses = [];
-      $scope.$apply();
+
     });
   };
 
@@ -39,12 +38,12 @@ finalApp.controller('finalController', function($scope, $http) {
     .success(function(data) {
       $scope.db.holes = data;
       console.log('Holes: ' + data);
-      $scope.$apply();
+
     })
     .error(function(data) {
       console.log('Error: ' + data);
       $scope.db.holes = [];
-      $scope.$apply();
+
     });
   };
 
@@ -54,12 +53,12 @@ finalApp.controller('finalController', function($scope, $http) {
     .success(function(data) {
       $scope.db.matchups = data;
       console.log('Matchups: ' + data);
-      $scope.$apply();
+
     })
     .error(function(data) {
       console.log('Error: ' + data);
       $scope.db.matchups = [];
-      $scope.$apply();
+
     });
   };
 
@@ -69,12 +68,12 @@ finalApp.controller('finalController', function($scope, $http) {
     .success(function(data) {
       $scope.db.players = data;
       console.log('Players: ' + data);
-      $scope.$apply();
+
     })
     .error(function(data) {
       console.log('Error: ' + data);
       $scope.db.players = [];
-      $scope.$apply();
+
     });
   };
 
@@ -84,12 +83,12 @@ finalApp.controller('finalController', function($scope, $http) {
     .success(function(data) {
       $scope.db.rounds = data;
       console.log('Rounds: ' + data);
-      $scope.$apply();
+
     })
     .error(function(data) {
       console.log('Error: ' + data);
       $scope.db.rounds = [];
-      $scope.$apply();
+
     });
   };
 
@@ -99,12 +98,12 @@ finalApp.controller('finalController', function($scope, $http) {
     .success(function(data) {
       $scope.db.scores = data;
       console.log('Scores: ' + data);
-      $scope.$apply();
+
     })
     .error(function(data) {
       console.log('Error: ' + data);
       $scope.db.scores = [];
-      $scope.$apply();
+
     });
   };
 
@@ -114,12 +113,12 @@ finalApp.controller('finalController', function($scope, $http) {
     .success(function(data) {
       $scope.db.seasons = data;
       console.log('Seasons: ' + data);
-      $scope.$apply();
+
     })
     .error(function(data) {
       console.log('Error: ' + data);
       $scope.db.seasons = [];
-      $scope.$apply();
+
     });
   };
 
@@ -129,12 +128,12 @@ finalApp.controller('finalController', function($scope, $http) {
     .success(function(data) {
       $scope.db.weeks = data;
       console.log('Weeks: ' + data);
-      $scope.$apply();
+
     })
     .error(function(data) {
       console.log('Error: ' + data);
       $scope.db.weeks = [];
-      $scope.$apply();
+
     });
   };
 
@@ -150,7 +149,7 @@ finalApp.controller('finalController', function($scope, $http) {
     $scope.Seasons();
     $scope.Teams();
     $scope.Weeks();
-    $scope.$apply();
+
   };
 
 });
