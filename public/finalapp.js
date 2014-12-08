@@ -7,6 +7,7 @@ finalApp.controller('finalController', function($scope, $http) {
     $http.get('/api/clubs')
     .success(function(data) {
       $scope.db.clubs = data;
+      console.log('Clubs: ' + data);
     })
     .error(function(data) {
       console.log('Error: ' + data);
@@ -19,6 +20,7 @@ finalApp.controller('finalController', function($scope, $http) {
     $http.get('/api/courses')
     .success(function(data) {
       $scope.db.courses =  data;
+      console.log('Courses: ' + data);
     })
     .error(function(data) {
       console.log('Error: ' + data);
@@ -31,6 +33,7 @@ finalApp.controller('finalController', function($scope, $http) {
     $http.get('/api/holes')
     .success(function(data) {
       $scope.db.holes = data;
+      console.log('Holes: ' + data);
     })
     .error(function(data) {
       console.log('Error: ' + data);
@@ -43,6 +46,7 @@ finalApp.controller('finalController', function($scope, $http) {
     $http.get('/api/matchups')
     .success(function(data) {
       $scope.db.matchups = data;
+      console.log('Matchups: ' + data);
     })
     .error(function(data) {
       console.log('Error: ' + data);
@@ -55,6 +59,7 @@ finalApp.controller('finalController', function($scope, $http) {
     $http.get('/api/players')
     .success(function(data) {
       $scope.db.players = data;
+      console.log('Players: ' + data);
     })
     .error(function(data) {
       console.log('Error: ' + data);
@@ -67,6 +72,7 @@ finalApp.controller('finalController', function($scope, $http) {
     $http.get('/api/rounds')
     .success(function(data) {
       $scope.db.rounds = data;
+      console.log('Rounds: ' + data);
     })
     .error(function(data) {
       console.log('Error: ' + data);
@@ -79,6 +85,7 @@ finalApp.controller('finalController', function($scope, $http) {
     $http.get('/api/scores')
     .success(function(data) {
       $scope.db.scores = data;
+      console.log('Scores: ' + data);
     })
     .error(function(data) {
       console.log('Error: ' + data);
@@ -91,6 +98,7 @@ finalApp.controller('finalController', function($scope, $http) {
     $http.get('/api/seasons')
     .success(function(data) {
       $scope.db.seasons = data;
+      console.log('Seasons: ' + data);
     })
     .error(function(data) {
       console.log('Error: ' + data);
@@ -103,6 +111,7 @@ finalApp.controller('finalController', function($scope, $http) {
     $http.get('/api/weeks')
     .success(function(data) {
       $scope.db.weeks = data;
+      console.log('Weeks: ' + data);
     })
     .error(function(data) {
       console.log('Error: ' + data);
@@ -112,6 +121,7 @@ finalApp.controller('finalController', function($scope, $http) {
 
 
   $scope.init = function () {
+    console.log("init called.");
     $scope.Clubs();
     $scope.Courses();
     $scope.Holes();
@@ -122,7 +132,7 @@ finalApp.controller('finalController', function($scope, $http) {
     $scope.Seasons();
     $scope.Teams();
     $scope.Weeks();
-  }
+  };
 });
 
 finalApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
