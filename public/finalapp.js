@@ -110,6 +110,18 @@ finalApp.controller('finalController', function($scope, $http) {
       $scope.db.weeks = [];
     });
   };
+
+
+  $scope.get.Clubs();
+  $scope.get.Courses();
+  $scope.get.Holes();
+  $scope.get.Matchups();
+  $scope.get.Players();
+  $scope.get.Rounds();
+  $scope.get.Scores();
+  $scope.get.Seasons();
+  $scope.get.Teams();
+  $scope.get.Weeks();
 });
 
 finalApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
