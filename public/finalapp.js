@@ -1,6 +1,7 @@
 var finalApp = angular.module('finalApp', ['ngRoute']);
 
 finalApp.controller('finalController', function($scope, $http) {
+  // Clubs
   $scope.clubs = function() {
     $http.get('/api/clubs')
     .success(function(data) {
@@ -13,6 +14,19 @@ finalApp.controller('finalController', function($scope, $http) {
     });
   };
 
+  $scope.clubs = function() {
+    $http.get('/api/clubs')
+    .success(function(data) {
+      $scope.opponent = data;
+      return data;
+    })
+    .error(function(data) {
+      console.log('Error: ' + data);
+      return [];
+    });
+  };
+
+  // Courses
   $scope.courses = function() {
     $http.get('/api/courses')
     .success(function(data) {
@@ -25,6 +39,7 @@ finalApp.controller('finalController', function($scope, $http) {
     });
   };
 
+  // Holes
   $scope.holes = function() {
     $http.get('/api/holes')
     .success(function(data) {
@@ -37,6 +52,7 @@ finalApp.controller('finalController', function($scope, $http) {
     });
   };
 
+  // Matchups
   $scope.matchups = function() {
     $http.get('/api/matchups')
     .success(function(data) {
@@ -49,6 +65,7 @@ finalApp.controller('finalController', function($scope, $http) {
     });
   };
 
+  // Players
   $scope.players = function() {
     $http.get('/api/players')
     .success(function(data) {
@@ -61,6 +78,7 @@ finalApp.controller('finalController', function($scope, $http) {
     });
   };
 
+  // Rounds
   $scope.rounds = function() {
     $http.get('/api/rounds')
     .success(function(data) {
@@ -73,6 +91,7 @@ finalApp.controller('finalController', function($scope, $http) {
     });
   };
 
+  // Scores
   $scope.scores = function() {
     $http.get('/api/scores')
     .success(function(data) {
@@ -85,6 +104,7 @@ finalApp.controller('finalController', function($scope, $http) {
     });
   };
 
+  // Seasons
   $scope.seasons = function() {
     $http.get('/api/seasons')
     .success(function(data) {
@@ -97,6 +117,7 @@ finalApp.controller('finalController', function($scope, $http) {
     });
   };
 
+  // Weeks
   $scope.weeks = function() {
     $http.get('/api/weeks')
     .success(function(data) {
