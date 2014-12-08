@@ -1,18 +1,13 @@
 <div>
-  <h3>Clubs</h3>
-  <ul>
-    <li ng-repeat="club in clubs() track by $index">
-      <p>CLUB_ID: <input type='text' ng-model='club.CLUB_ID' disabled></p>
-      <p>Name: <input type='text' ng-model='club.NAME' disabled></p>
-      <p>Country: <input type='text' ng-model='club.COUNTRY' disabled></p>
-      <p>State: <input type='text' ng-model='club.STATE' disabled></p>
-      <p>City: <input type='text' ng-model='club.CITY' disabled></p>
-      <p>Zip: <input type='text' ng-model='club.ZIP' disabled></p>
-      <p>Street: <input type='text' ng-model='club.STREET' disabled></p>
-      <p>Email: <input type='text' ng-model='club.EMAIL' disabled></p>
-      <p>Phone: <input type='text' ng-model='club.PHONE' disabled></p>
-      <p>Slope: <input type='text' ng-model='club.SLOPE' disabled></p>
-      <p>Rules: <input type='text' ng-model='club.RULES' disabled></p>
+  <h3>Holes</h3>
+  <ul ng-init="get.Holes()">
+    <li ng-repeat="hole in db.holes track by $index">
+      <p>HOLE_ID: <input type='text' ng-model='hole.HOLE_ID' disabled></p>
+      <p>COURSE_ID: <input type='text' ng-model='hole.COURSE_ID' disabled></p>
+      <p>HOLENUM: <input type='text' ng-model='hole.HOLENUM' disabled></p>
+      <p>PAR: <input type='text' ng-model='hole.PAR' disabled></p>
+      <p>YARDS: <input type='text' ng-model='hole.YARDS' disabled></p>
+      <p>HANDICAP: <input type='text' ng-model='hole.HANDICAP' disabled></p>
     <li>
   </ul>
 </div>

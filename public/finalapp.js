@@ -1,132 +1,113 @@
 var finalApp = angular.module('finalApp', ['ngRoute']);
 
 finalApp.controller('finalController', function($scope, $http) {
+  $scope.get = {};
+  $scope.db = {};
   // Clubs
-  $scope.clubs = function() {
+  $scope.get.Clubs = function() {
     $http.get('/api/clubs')
     .success(function(data) {
-      $scope.opponent = data;
-      return data;
+      $scope.db.clubs = data;
     })
     .error(function(data) {
       console.log('Error: ' + data);
-      return [];
-    });
-  };
-
-  $scope.clubs = function() {
-    $http.get('/api/clubs')
-    .success(function(data) {
-      $scope.opponent = data;
-      return data;
-    })
-    .error(function(data) {
-      console.log('Error: ' + data);
-      return [];
+      $scope.db.clubs =  [];
     });
   };
 
   // Courses
-  $scope.courses = function() {
+  $scope.get.Courses = function() {
     $http.get('/api/courses')
     .success(function(data) {
-      $scope.opponent = data;
-      return data;
+      $scope.db.courses =  data;
     })
     .error(function(data) {
       console.log('Error: ' + data);
-      return [];
+      $scope.db.courses = [];
     });
   };
 
   // Holes
-  $scope.holes = function() {
+  $scope.get.Holes = function() {
     $http.get('/api/holes')
     .success(function(data) {
-      $scope.opponent = data;
-      return data;
+      $scope.db.holes = data;
     })
     .error(function(data) {
       console.log('Error: ' + data);
-      return [];
+      $scope.db.holes = [];
     });
   };
 
   // Matchups
-  $scope.matchups = function() {
+  $scope.get.Matchups = function() {
     $http.get('/api/matchups')
     .success(function(data) {
-      $scope.opponent = data;
-      return data;
+      $scope.db.matchups = data;
     })
     .error(function(data) {
       console.log('Error: ' + data);
-      return [];
+      $scope.db.matchups = [];
     });
   };
 
   // Players
-  $scope.players = function() {
+  $scope.get.Players = function() {
     $http.get('/api/players')
     .success(function(data) {
-      $scope.opponent = data;
-      return data;
+      $scope.db.players = data;
     })
     .error(function(data) {
       console.log('Error: ' + data);
-      return [];
+      $scope.db.players = [];
     });
   };
 
   // Rounds
-  $scope.rounds = function() {
+  $scope.get.Rounds = function() {
     $http.get('/api/rounds')
     .success(function(data) {
-      $scope.opponent = data;
-      return data;
+      $scope.db.rounds = data;
     })
     .error(function(data) {
       console.log('Error: ' + data);
-      return [];
+      $scope.db.rounds = [];
     });
   };
 
   // Scores
-  $scope.scores = function() {
+  $scope.get.Scores = function() {
     $http.get('/api/scores')
     .success(function(data) {
-      $scope.opponent = data;
-      return data;
+      $scope.db.scores = data;
     })
     .error(function(data) {
       console.log('Error: ' + data);
-      return [];
+      $scope.db.scores = [];
     });
   };
 
   // Seasons
-  $scope.seasons = function() {
+  $scope.get.Seasons = function() {
     $http.get('/api/seasons')
     .success(function(data) {
-      $scope.opponent = data;
-      return data;
+      $scope.db.seasons = data;
     })
     .error(function(data) {
       console.log('Error: ' + data);
-      return [];
+      $scope.db.seasons = [];
     });
   };
 
   // Weeks
-  $scope.weeks = function() {
+  $scope.get.Weeks = function() {
     $http.get('/api/weeks')
     .success(function(data) {
-      $scope.opponent = data;
-      return data;
+      $scope.db.weeks = data;
     })
     .error(function(data) {
       console.log('Error: ' + data);
-      return [];
+      $scope.db.weeks = [];
     });
   };
 });

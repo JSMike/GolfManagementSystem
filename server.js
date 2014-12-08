@@ -22,8 +22,8 @@ var async = require('async');
 var connectData = {
   hostname: "ip-172-31-0-220",
   database: "xe",
-  user: process.env.USER,
-  password: process.env.PW
+  user: process.env.DBUSER,
+  password: process.env.DBPW
 };
 
 app.set('view engine', 'ejs');
