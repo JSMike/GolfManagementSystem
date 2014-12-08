@@ -27,11 +27,11 @@ var connectData = {
 };
 
 app.set('view engine', 'ejs');
-app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(express.static(__dirname + '/public'));
 
 app.get('/views/:view', function(req, res) {
   res.render(req.params.view);
