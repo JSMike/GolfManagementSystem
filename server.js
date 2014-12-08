@@ -139,7 +139,7 @@ app.get('/api/holes', function(req, res) {
       return;
     }
 
-    connection.execute("select HOLE_ID, COURSE_ID, HOLENUM, PAR, YARDS, HADICAP from HOLES", [], function(err, results) {
+    connection.execute("select HOLE_ID, COURSE_ID, HOLENUM, PAR, YARDS, HANDICAP from HOLES", [], function(err, results) {
       if (err) {
         console.log("Error selecting players:", err);
         res.send({});
