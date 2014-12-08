@@ -1,10 +1,9 @@
 var finalApp = angular.module('finalApp', ['ngRoute']);
 
 finalApp.controller('finalController', function($scope, $http) {
-  $scope.get = {};
   $scope.db = {};
   // Clubs
-  $scope.get.Clubs = function() {
+  $scope.Clubs = function() {
     $http.get('/api/clubs')
     .success(function(data) {
       $scope.db.clubs = data;
@@ -16,7 +15,7 @@ finalApp.controller('finalController', function($scope, $http) {
   };
 
   // Courses
-  $scope.get.Courses = function() {
+  $scope.Courses = function() {
     $http.get('/api/courses')
     .success(function(data) {
       $scope.db.courses =  data;
@@ -28,7 +27,7 @@ finalApp.controller('finalController', function($scope, $http) {
   };
 
   // Holes
-  $scope.get.Holes = function() {
+  $scope.Holes = function() {
     $http.get('/api/holes')
     .success(function(data) {
       $scope.db.holes = data;
@@ -40,7 +39,7 @@ finalApp.controller('finalController', function($scope, $http) {
   };
 
   // Matchups
-  $scope.get.Matchups = function() {
+  $scope.Matchups = function() {
     $http.get('/api/matchups')
     .success(function(data) {
       $scope.db.matchups = data;
@@ -52,7 +51,7 @@ finalApp.controller('finalController', function($scope, $http) {
   };
 
   // Players
-  $scope.get.Players = function() {
+  $scope.Players = function() {
     $http.get('/api/players')
     .success(function(data) {
       $scope.db.players = data;
@@ -64,7 +63,7 @@ finalApp.controller('finalController', function($scope, $http) {
   };
 
   // Rounds
-  $scope.get.Rounds = function() {
+  $scope.Rounds = function() {
     $http.get('/api/rounds')
     .success(function(data) {
       $scope.db.rounds = data;
@@ -76,7 +75,7 @@ finalApp.controller('finalController', function($scope, $http) {
   };
 
   // Scores
-  $scope.get.Scores = function() {
+  $scope.Scores = function() {
     $http.get('/api/scores')
     .success(function(data) {
       $scope.db.scores = data;
@@ -88,7 +87,7 @@ finalApp.controller('finalController', function($scope, $http) {
   };
 
   // Seasons
-  $scope.get.Seasons = function() {
+  $scope.Seasons = function() {
     $http.get('/api/seasons')
     .success(function(data) {
       $scope.db.seasons = data;
@@ -100,7 +99,7 @@ finalApp.controller('finalController', function($scope, $http) {
   };
 
   // Weeks
-  $scope.get.Weeks = function() {
+  $scope.Weeks = function() {
     $http.get('/api/weeks')
     .success(function(data) {
       $scope.db.weeks = data;
@@ -112,16 +111,16 @@ finalApp.controller('finalController', function($scope, $http) {
   };
 
 
-  $scope.get.Clubs();
-  $scope.get.Courses();
-  $scope.get.Holes();
-  $scope.get.Matchups();
-  $scope.get.Players();
-  $scope.get.Rounds();
-  $scope.get.Scores();
-  $scope.get.Seasons();
-  $scope.get.Teams();
-  $scope.get.Weeks();
+  $scope.Clubs();
+  $scope.Courses();
+  $scope.Holes();
+  $scope.Matchups();
+  $scope.Players();
+  $scope.Rounds();
+  $scope.Scores();
+  $scope.Seasons();
+  $scope.Teams();
+  $scope.Weeks();
 });
 
 finalApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {

@@ -1,6 +1,6 @@
 <div>
   <h3 class="text-center">Matchups</h3>
-  <ul ng-init"get.Matchups()">
+  <ul ng-init"Matchups()">
     <li ng-repeat="matchup in db.matchups track by $index">
       <p>MATCHUP_ID: <input type='text' ng-model='matchup.MATCHUP_ID' disabled></p>
       <p>WEEK_ID: <input type='text' ng-model='matchup.WEEK_ID' disabled></p>

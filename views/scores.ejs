@@ -1,6 +1,6 @@
 <div>
   <h3 class="text-center">Scores</h3>
-  <ul ng-init="get.Scores()">
+  <ul ng-init="Scores()">
     <li ng-repeat="score in db.scores track by $index">
       <p>SCORE_ID: <input type='text' ng-model='score.SCORE_ID' disabled></p>
       <p>HOLE_ID: <input type='text' ng-model='score.HOLE_ID' disabled></p>
