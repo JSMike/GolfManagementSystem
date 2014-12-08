@@ -163,12 +163,12 @@ finalApp.controller('finalController', function($scope, $http) {
   $scope.Teams = function() {
     $http.get('/api/teams')
     .success(function(data) {
-      $scope.db.seasons = data;
+      $scope.db.teams = data;
       //console.log('Teams: ' + data);
     })
     .error(function(data) {
       console.log('Error: ' + data);
-      $scope.db.seasons = [];
+      $scope.db.teams = [];
 
     });
   };
