@@ -81,6 +81,26 @@ finalApp.controller('finalController', function($scope, $http) {
     });
   };
 
+  $scope.courseEdit = function($index, confirm) {
+    if (!$scope.db.edit.courses.index[$index]) {
+      $scope.db.edit.courses.index[$index] = $scope.db.courses[$index];
+    } else if (confirm) {
+      $http.post('/api/course/' + $scope.db.edit.courses.index[$index].course_ID, $scope.db.courses[$index])
+      .success(function(data) {
+        delete $scope.db.edit.courses.index[$index];
+        $scope.courses();
+      })
+      .error(function(data) {
+        console.log('Error: ' + data);
+        delete $scope.db.edit.courses.index[$index];
+        $scope.courses();
+      });
+    } else {
+      delete $scope.db.edit.courses.index[$index];
+      $scope.courses();
+    }
+  };
+
   // Holes
   $scope.Holes = function() {
     $http.get('/api/holes')
@@ -92,6 +112,26 @@ finalApp.controller('finalController', function($scope, $http) {
       console.log('Error: ' + data);
       $scope.db.holes = [];
     });
+  };
+
+  $scope.holeEdit = function($index, confirm) {
+    if (!$scope.db.edit.holes.index[$index]) {
+      $scope.db.edit.holes.index[$index] = $scope.db.holes[$index];
+    } else if (confirm) {
+      $http.post('/api/hole/' + $scope.db.edit.holes.index[$index].hole_ID, $scope.db.holes[$index])
+      .success(function(data) {
+        delete $scope.db.edit.holes.index[$index];
+        $scope.holes();
+      })
+      .error(function(data) {
+        console.log('Error: ' + data);
+        delete $scope.db.edit.holes.index[$index];
+        $scope.holes();
+      });
+    } else {
+      delete $scope.db.edit.holes.index[$index];
+      $scope.holes();
+    }
   };
 
   // Matchups
@@ -107,6 +147,26 @@ finalApp.controller('finalController', function($scope, $http) {
     });
   };
 
+  $scope.matchupEdit = function($index, confirm) {
+    if (!$scope.db.edit.matchups.index[$index]) {
+      $scope.db.edit.matchups.index[$index] = $scope.db.matchups[$index];
+    } else if (confirm) {
+      $http.post('/api/matchup/' + $scope.db.edit.matchups.index[$index].matchup_ID, $scope.db.matchups[$index])
+      .success(function(data) {
+        delete $scope.db.edit.matchups.index[$index];
+        $scope.matchups();
+      })
+      .error(function(data) {
+        console.log('Error: ' + data);
+        delete $scope.db.edit.matchups.index[$index];
+        $scope.matchups();
+      });
+    } else {
+      delete $scope.db.edit.matchups.index[$index];
+      $scope.matchups();
+    }
+  };
+
   // Players
   $scope.Players = function() {
     $http.get('/api/players')
@@ -118,6 +178,26 @@ finalApp.controller('finalController', function($scope, $http) {
       console.log('Error: ' + data);
       $scope.db.players = [];
     });
+  };
+
+  $scope.playerEdit = function($index, confirm) {
+    if (!$scope.db.edit.players.index[$index]) {
+      $scope.db.edit.players.index[$index] = $scope.db.players[$index];
+    } else if (confirm) {
+      $http.post('/api/player/' + $scope.db.edit.players.index[$index].player_ID, $scope.db.players[$index])
+      .success(function(data) {
+        delete $scope.db.edit.players.index[$index];
+        $scope.players();
+      })
+      .error(function(data) {
+        console.log('Error: ' + data);
+        delete $scope.db.edit.players.index[$index];
+        $scope.players();
+      });
+    } else {
+      delete $scope.db.edit.players.index[$index];
+      $scope.players();
+    }
   };
 
   // Rounds
@@ -133,6 +213,26 @@ finalApp.controller('finalController', function($scope, $http) {
     });
   };
 
+  $scope.roundEdit = function($index, confirm) {
+    if (!$scope.db.edit.rounds.index[$index]) {
+      $scope.db.edit.rounds.index[$index] = $scope.db.rounds[$index];
+    } else if (confirm) {
+      $http.post('/api/round/' + $scope.db.edit.rounds.index[$index].round_ID, $scope.db.rounds[$index])
+      .success(function(data) {
+        delete $scope.db.edit.rounds.index[$index];
+        $scope.rounds();
+      })
+      .error(function(data) {
+        console.log('Error: ' + data);
+        delete $scope.db.edit.rounds.index[$index];
+        $scope.rounds();
+      });
+    } else {
+      delete $scope.db.edit.rounds.index[$index];
+      $scope.rounds();
+    }
+  };
+
   // Scores
   $scope.Scores = function() {
     $http.get('/api/scores')
@@ -146,6 +246,26 @@ finalApp.controller('finalController', function($scope, $http) {
     });
   };
 
+  $scope.scoreEdit = function($index, confirm) {
+    if (!$scope.db.edit.scores.index[$index]) {
+      $scope.db.edit.scores.index[$index] = $scope.db.scores[$index];
+    } else if (confirm) {
+      $http.post('/api/score/' + $scope.db.edit.scores.index[$index].score_ID, $scope.db.scores[$index])
+      .success(function(data) {
+        delete $scope.db.edit.scores.index[$index];
+        $scope.scores();
+      })
+      .error(function(data) {
+        console.log('Error: ' + data);
+        delete $scope.db.edit.scores.index[$index];
+        $scope.scores();
+      });
+    } else {
+      delete $scope.db.edit.scores.index[$index];
+      $scope.scores();
+    }
+  };
+
   // Seasons
   $scope.Seasons = function() {
     $http.get('/api/seasons')
@@ -157,6 +277,26 @@ finalApp.controller('finalController', function($scope, $http) {
       console.log('Error: ' + data);
       $scope.db.seasons = [];
     });
+  };
+
+  $scope.seasonEdit = function($index, confirm) {
+    if (!$scope.db.edit.seasons.index[$index]) {
+      $scope.db.edit.seasons.index[$index] = $scope.db.seasons[$index];
+    } else if (confirm) {
+      $http.post('/api/season/' + $scope.db.edit.seasons.index[$index].season_ID, $scope.db.seasons[$index])
+      .success(function(data) {
+        delete $scope.db.edit.seasons.index[$index];
+        $scope.seasons();
+      })
+      .error(function(data) {
+        console.log('Error: ' + data);
+        delete $scope.db.edit.seasons.index[$index];
+        $scope.seasons();
+      });
+    } else {
+      delete $scope.db.edit.seasons.index[$index];
+      $scope.seasons();
+    }
   };
 
   // Teams
@@ -173,6 +313,26 @@ finalApp.controller('finalController', function($scope, $http) {
     });
   };
 
+  $scope.teamEdit = function($index, confirm) {
+    if (!$scope.db.edit.teams.index[$index]) {
+      $scope.db.edit.teams.index[$index] = $scope.db.teams[$index];
+    } else if (confirm) {
+      $http.post('/api/team/' + $scope.db.edit.teams.index[$index].team_ID, $scope.db.teams[$index])
+      .success(function(data) {
+        delete $scope.db.edit.teams.index[$index];
+        $scope.teams();
+      })
+      .error(function(data) {
+        console.log('Error: ' + data);
+        delete $scope.db.edit.teams.index[$index];
+        $scope.teams();
+      });
+    } else {
+      delete $scope.db.edit.teams.index[$index];
+      $scope.teams();
+    }
+  };
+
   // Weeks
   $scope.Weeks = function() {
     $http.get('/api/weeks')
@@ -184,6 +344,26 @@ finalApp.controller('finalController', function($scope, $http) {
       console.log('Error: ' + data);
       $scope.db.weeks = [];
     });
+  };
+
+  $scope.weekEdit = function($index, confirm) {
+    if (!$scope.db.edit.weeks.index[$index]) {
+      $scope.db.edit.weeks.index[$index] = $scope.db.weeks[$index];
+    } else if (confirm) {
+      $http.post('/api/week/' + $scope.db.edit.weeks.index[$index].week_ID, $scope.db.weeks[$index])
+      .success(function(data) {
+        delete $scope.db.edit.weeks.index[$index];
+        $scope.weeks();
+      })
+      .error(function(data) {
+        console.log('Error: ' + data);
+        delete $scope.db.edit.weeks.index[$index];
+        $scope.weeks();
+      });
+    } else {
+      delete $scope.db.edit.weeks.index[$index];
+      $scope.weeks();
+    }
   };
 
   // $scope.init = function () {
