@@ -37,7 +37,7 @@ Strong-oracle also requires libraries from oracle instant client in order to
 compile. See the instructions on their npm page:
 https://www.npmjs.com/package/strong-oracle
 
-After these modeules and libraries are installed use the following to run the
+After these modules and libraries are installed use the following to run the
 application:
 
 node server.js
