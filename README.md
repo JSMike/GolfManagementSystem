@@ -27,6 +27,7 @@ npm install -g bower
 Then to install the modules and libraries used by this application run:
 
 npm install
+
 bower install
 
 
